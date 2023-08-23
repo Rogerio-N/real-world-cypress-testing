@@ -1,0 +1,9 @@
+node_modules
+package-lock.json
+
+dist/
+
+#Cypress
+cypress/videos
+cypress/screenshots
+cypress/downloads
