@@ -1,6 +1,5 @@
-enum HeaderText {
-	CREATE_ACCOUNT = 'Create an Account',
-	SIGN_IN = 'Sign In',
+export enum HeaderTextEnum {
+	HOME = 'Home',
+	SIGN_IN = 'Sign in',
+	SIGN_UP = 'Sign up',
 }
-
-export default HeaderText

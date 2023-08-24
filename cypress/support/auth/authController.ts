@@ -1,8 +1,14 @@
+import users from '../../fixtures/users'
 import authService from './authService'
 
 class AuthController {
-	login(email: string, password: string) {
-		authService.login(email, password)
+	login(username: string, options: Authentication.ILoginOptions) {
+		const user = users[username]
+		if (options.isCachedSession) {
+			authService.sessionLogin(user.email, user.password)
+		} else {
+			authService.login(user.email, user.password)
+		}
 	}
 }
 

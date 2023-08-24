@@ -1,8 +1,10 @@
 import { IUserFixture } from './users'
-import users from './usersData'
 
-const allUsers: IUserFixture = {
-	...users,
+const users: IUserFixture = {
+	rootUser: {
+		email: 'root@mock.com',
+		password: 'root123',
+	},
 }
 
-export default allUsers
+export default users

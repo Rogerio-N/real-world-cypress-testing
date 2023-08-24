@@ -1,11 +1,12 @@
 import Header from '../components/header'
-import allUsers from '../fixtures/users'
 
 describe('Login test cenarios', () => {
-	it('passes', () => {
+	it('Success to login', () => {
 		cy.visit('/')
-		Header.clickLinkLogin()
-		const user = allUsers['roni']
-		cy.login(user.email, user.password)
+		Header.clickSignInLink()
+		cy.intercept('POST', '/api').as('login')
+		cy.login('rootUser', { isCachedSession: false })
+		cy.wait('@login').its('response.statusCode').should('eq', 200)
+		Header.getSignInLink().should('not.exist')
 	})
 })

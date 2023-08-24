@@ -1,22 +1,25 @@
-import HeaderText from './headerTextEnum'
+import { HeaderTextEnum } from './HeaderTextEnum'
 
 class Header {
 	private elements = {
-		linkCreateAccount: () =>
-			cy.get('header').contains(HeaderText.CREATE_ACCOUNT),
-		linkLogin: () => cy.get('header').contains(HeaderText.SIGN_IN),
+		HomeLink: () =>
+			cy.get('#navbar-default').findByText(HeaderTextEnum.HOME),
+		SingInLink: () =>
+			cy.get('#navbar-default').findByText(HeaderTextEnum.SIGN_IN),
+		SingUpLink: () =>
+			cy.get('#navbar-default').findByText(HeaderTextEnum.SIGN_UP),
 	}
 
-	clickLinkCreateAccount() {
-		this.elements.linkCreateAccount().click()
+	clickHomeLink() {
+		this.elements.HomeLink().click()
 	}
 
-	getLinkCreateAccount() {
-		return this.elements.linkCreateAccount()
+	clickSignInLink() {
+		this.elements.SingInLink().click()
 	}
 
-	clickLinkLogin() {
-		this.elements.linkLogin().click()
+	getSignInLink() {
+		return this.elements.SingInLink()
 	}
 }
 

@@ -1,5 +1,13 @@
 declare namespace Cypress {
 	interface Chainable {
-		login(email: string, password: string)
+		login(
+			username: string,
+			options?: Authentication.ILoginOptions
+		): Chainable<void>
+	}
+}
+declare namespace Authentication {
+	interface ILoginOptions {
+		isCachedSession?: boolean
 	}
 }

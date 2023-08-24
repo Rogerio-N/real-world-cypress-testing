@@ -1,8 +1,8 @@
 class LoginPage {
 	private elements = {
-		inputEmail: () => cy.get('#email'),
-		inputPassword: () => cy.get('#pass'),
-		buttonSignin: () => cy.get('#send2'),
+		inputEmail: () => cy.findByPlaceholderText('Email'),
+		inputPassword: () => cy.findByPlaceholderText('Password'),
+		buttonSignin: () => cy.findByRole('button', { name: 'Sign in' }),
 	}
 
 	typeEmail(email: string) {
