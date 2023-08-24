@@ -1,10 +1,10 @@
+import invalidUsers from './invalidUsers'
 import { IUserFixture } from './users'
+import validUsers from './validUsers'
 
 const users: IUserFixture = {
-	rootUser: {
-		email: 'root@mock.com',
-		password: 'root123',
-	},
+	...validUsers,
+	...invalidUsers,
 }
 
 export default users

@@ -1,4 +1,4 @@
-import loginPage from '../../pages/login'
+import loginPage from '../../pages/loginPage'
 
 class AuthService {
 	login(email: string, password: string) {
