@@ -21,7 +21,7 @@ describe('Login test scenarios', () => {
 		Header.getSignInLink().should('not.exist')
 	})
 
-	it('Erro to login, user not found', () => {
+	it('Error to login, user not found', () => {
 		cy.intercept('POST', '/api', (req) => {
 			if (hasOperationName(req, 'Login')) {
 				req.alias = 'login'
