@@ -4,6 +4,8 @@ declare namespace Cypress {
 			username: string,
 			options?: Authentication.ILoginOptions
 		): Chainable<void>
+
+		register(username: string): Chainable<void>
 	}
 }
 declare namespace Authentication {

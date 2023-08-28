@@ -6,7 +6,7 @@ class AuthController {
 		const user = users[username]
 
 		if (user == null) {
-			throw new Error('User not found')
+			throw new Error('M=login, R=User not found')
 		}
 
 		if (options.isCachedSession) {
@@ -14,6 +14,14 @@ class AuthController {
 		} else {
 			authService.login(user.email, user.password)
 		}
+	}
+
+	register(username: string) {
+		const user = users[username]
+		if (user == null) {
+			throw new Error('M=register, R=User not found')
+		}
+		authService.register(user.username, user.email, user.password)
 	}
 }
 

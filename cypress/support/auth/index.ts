@@ -13,3 +13,7 @@ Cypress.Commands.add(
 const defaultLoginOptions: Authentication.ILoginOptions = {
 	isCachedSession: true,
 }
+
+Cypress.Commands.add('register', (username: string) => {
+	authController.register(username)
+})

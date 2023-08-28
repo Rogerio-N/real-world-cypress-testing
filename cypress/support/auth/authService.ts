@@ -1,4 +1,5 @@
 import loginPage from '../../pages/loginPage'
+import registerPage from '../../pages/registerPage'
 
 class AuthService {
 	login(email: string, password: string) {
@@ -20,6 +21,13 @@ class AuthService {
 				},
 			}
 		)
+	}
+
+	register(name: string, email: string, password: string) {
+		registerPage.typeUsername(name)
+		registerPage.typeEmail(email)
+		registerPage.typePassword(password)
+		registerPage.clickButtonSignUp()
 	}
 }
 

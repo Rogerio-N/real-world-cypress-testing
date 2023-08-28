@@ -21,6 +21,10 @@ class Header {
 	getSignInLink() {
 		return this.elements.SingInLink()
 	}
+
+	clickSignUpLink() {
+		this.elements.SingUpLink().click()
+	}
 }
 
 export default new Header()

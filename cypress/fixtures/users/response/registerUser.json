@@ -1,0 +1,13 @@
+{
+    "data": {
+        "signup": {
+            "id": 15,
+            "username": "test7User",
+            "email": "test7User@mock.com",
+            "bio": null,
+            "image": null,
+            "token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Iml6YXlvaSJ9.eyJzdWIiOjE1LCJ1c2VyIjoidGVzdDdVc2VyIiwiaWF0IjoxNjkzMTQyNzA4LCJleHAiOjE2OTMzMTU1MDh9.s9jwGXoXf0DdSd_u8b11DKpwl0r3YoYNNThXTyee1g7mih9mWDh7vQzT-TlRYBrN8olbJxYeK26sW7rFFqJixLRJQSg6f6Ni27Q5tyFS_174RIdfUrEquT8l2bs5VR-GRR88oE8_92cOPvnkz-xeiM9lNtCA4p82qxAxOz0A0KETDpYi0k5U5_O9znqGD868Gk4fvwDbJKmuWs3fqxnOcX1IC140K32Qq0y3TxE0B61XrJyxDLWMlYSrvxlN-kBRDk1AqF_aD-aB7o4b0RwqrJTkNJfap4j1qOMSbEnojwDlHvPUAfEom_EjqDZTO7X9yWB0XrT5eDrYOlaOyezmcg",
+            "__typename": "AuthUser"
+        }
+    }
+}
