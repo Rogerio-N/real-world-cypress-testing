@@ -10,7 +10,7 @@ describe('Article test scenarios', () => {
 			cy.visit('/')
 			header.clickCreateArticle()
 		})
-		it.only('Success to create article', () => {
+		it('Success to create article', () => {
 			cy.intercept('POST', '/api', (req) => {
 				aliasRequest(req, 'CreateArticle')
 			})
