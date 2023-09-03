@@ -8,6 +8,8 @@ class Header {
 			cy.get('#navbar-default').findByText(HeaderTextEnum.SIGN_IN),
 		SingUpLink: () =>
 			cy.get('#navbar-default').findByText(HeaderTextEnum.SIGN_UP),
+		CreateArticleLink: () =>
+			cy.get('#navbar-default').findByText(HeaderTextEnum.NEW_ARTICLE),
 	}
 
 	clickHomeLink() {
@@ -24,6 +26,10 @@ class Header {
 
 	clickSignUpLink() {
 		this.elements.SingUpLink().click()
+	}
+
+	clickCreateArticle() {
+		this.elements.CreateArticleLink().click()
 	}
 }
 

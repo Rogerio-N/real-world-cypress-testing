@@ -17,6 +17,7 @@ import '@testing-library/cypress/add-commands'
 
 // Import commands.js using ES2015 syntax:
 import './auth'
+import './article'
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
