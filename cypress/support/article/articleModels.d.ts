@@ -1,8 +1,5 @@
 declare namespace Cypress {
 	interface Chainable {
-		createNewArticle(
-			articleType: Article.ArticleTypeEnum,
-			article?: Article.IArticle
-		): Chainable<void>
+		createNewArticle(article?: Partial<Article.IArticle>): Chainable<void>
 	}
 }

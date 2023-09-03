@@ -9,10 +9,15 @@ class NewArticlePage {
 		tagsInput: () => cy.findByPlaceholderText(ArticleTextEnum.TAGS),
 		publishButton: () =>
 			cy.findByRole('button', { name: ArticleTextEnum.PUBLISH_ARTICLE }),
+		articleForm: () => cy.get('form'),
 	}
 
 	inputTitle(title: string) {
 		this.elements.titleInput().type(title)
+	}
+
+	getFormValidation(validationMessage: string) {
+		return this.elements.articleForm().contains(validationMessage)
 	}
 
 	inputDescription(description: string) {
@@ -28,7 +33,11 @@ class NewArticlePage {
 	}
 
 	clickPublishButton() {
-		this.elements.publishButton().click()
+		this.elements.publishButton().click({ force: true })
+	}
+
+	getPublishButton() {
+		return this.elements.publishButton()
 	}
 }
 
