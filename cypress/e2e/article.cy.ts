@@ -1,7 +1,7 @@
 import header from '../components/header'
 import articleDetailsPage from '../pages/article/articleDetailsPage'
 import { ArticleTypeEnum } from '../support/article/articleTypeEnum'
-import { hasOperationName } from '../utils/graphqlUtils'
+import { aliasRequest } from '../utils/graphqlUtils'
 
 describe('Article test scenarios', () => {
 	context('Create artcile scenarios', () => {
@@ -12,12 +12,10 @@ describe('Article test scenarios', () => {
 		it('Success to create article', () => {
 			header.clickCreateArticle()
 			cy.intercept('POST', '/api', (req) => {
-				if (hasOperationName(req, 'CreateArticle')) {
-					req.alias = 'createArticle'
-				}
+				aliasRequest(req, 'CreateArticle')
 			})
 			cy.createNewArticle(ArticleTypeEnum.DEFAULT)
-			cy.wait('@createArticle').then(({ request }) => {
+			cy.wait('@gqlCreateArticleRequest').then(({ request }) => {
 				cy.url().should('contain', '/article/')
 				articleDetailsPage
 					.getTitleText()

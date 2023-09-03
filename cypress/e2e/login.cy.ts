@@ -1,6 +1,6 @@
 import Header from '../components/header'
 import loginPage from '../pages/loginPage'
-import { hasOperationName } from '../utils/graphqlUtils'
+import { aliasRequest } from '../utils/graphqlUtils'
 
 describe('Login test scenarios', () => {
 	beforeEach(() => {
@@ -9,12 +9,10 @@ describe('Login test scenarios', () => {
 
 	it('Success to login', () => {
 		cy.intercept('POST', '/api', (req) => {
-			if (hasOperationName(req, 'Login')) {
-				req.alias = 'login'
-			}
+			aliasRequest(req, 'Login')
 		})
 		cy.login('rootUser', { isCachedSession: false })
-		cy.wait('@login').then(({ response }) => {
+		cy.wait('@gqlLoginRequest').then(({ response }) => {
 			expect(response?.body.data.login.token).not.be.empty
 			expect(response?.body.errors).not.exist
 		})
@@ -23,12 +21,10 @@ describe('Login test scenarios', () => {
 
 	it('Error to login, user not found', () => {
 		cy.intercept('POST', '/api', (req) => {
-			if (hasOperationName(req, 'Login')) {
-				req.alias = 'login'
-			}
+			aliasRequest(req, 'Login')
 		})
 		cy.login('notRegistered', { isCachedSession: false })
-		cy.wait('@login').then(({ response }) => {
+		cy.wait('@gqlLoginRequest').then(({ response }) => {
 			expect(response?.body.errors[0].message).to.be.eq('Bad Credentials')
 		})
 		cy.url().should('contain', '/login')
