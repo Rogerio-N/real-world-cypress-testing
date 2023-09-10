@@ -1,10 +1,19 @@
-# Cypress Template
+# Real World APP testing with cypress + graphql
 
 ![Cypress](https://img.shields.io/badge/Cypress-black?style=for-the-badge&logo=cypress&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/Typescript-blue?style=for-the-badge&logo=typescript&logoColor=white)
 ![Node](https://img.shields.io/badge/Node-red?style=for-the-badge&logo=npm&logoColor=white)
+![Graphql](https://img.shields.io/badge/GraphQl-black?style=for-the-badge&logo=GraphQl&labelColor=%23E10098&color=%23E10098)
 
-This is a template repository. Its purpose is to be used in new projects that uses Cypress with TypeScript.  
+This project purpose is to test a real world app implemented Next + GraphQL. The real world app is a challange to create a clone from Medium, the application used to test was forked from [jimleeston](https://github.com/jimleestone/next-real-world)
+
+Were choosen to automate the main app flows that represent the most critical/valuable flows in the app. They were:
+- Login 
+- Register 
+- Create new article
+- Read article
+
+The test was made using [Cypress](https://www.cypress.io/), a simple yet robust javascript end-to-end web test automation framewok. For this project, were used Typescript insted default JS and used a Page-Object as the main design pattern
 
 ### Pre-requisites
 
@@ -16,12 +25,11 @@ This is a template repository. Its purpose is to be used in new projects that us
 
 2 - Once the installation finishes, you can open the cypress window. Run the command: `npx cypress open` and you are ready to go
 
-### Optional
+### Test results
 
-1 - Use the following extensions in VScode:
+### Improvements
 
-- Auto Import
-- Chai snippets
-- ES6 Mocha Snippets
-- ESLint
-- Prettier
+After the devlopment of this tests, is possible to see some points that can be improved, it follows:
+
+1 - The way the fixtures were used on this aproach could be done by developing a factory for the users and the articles. This would garantee the growth of complex cases with great segregation
+2 - Approach the architecture in a simpler way to expand. The architecture for project could be improved by the usage of contexts, using as base the DDD (Domain-Driven Development)
